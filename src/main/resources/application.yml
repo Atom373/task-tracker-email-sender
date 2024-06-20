@@ -1,6 +1,8 @@
 spring:
   application:
     name: task-tracker-mailsender
+  mail:
+    sender-email: atom44394@gmail.com
   rabbitmq:
     host: localhost
     port: 5672
