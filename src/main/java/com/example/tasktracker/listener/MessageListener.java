@@ -17,6 +17,7 @@ public class MessageListener {
 	
 	@RabbitListener(queues = "EMAIL_SENDING_TASKS")
 	public void handleMessage(EmailMessage messageDetails) {
+		log.info(messageDetails.toString());
 		try {
 			sender.send(messageDetails);
 		} catch (Exception e) {
