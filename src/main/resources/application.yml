@@ -5,7 +5,7 @@ spring:
     box: atom44394@gmail.com
     provider: mailgun
   rabbitmq:
-    host: localhost
+    host: ${TASK_TRACKER_RABBITMQ_HOST:localhost}
     port: 5672
     username: guest
     password: guest

@@ -14,8 +14,6 @@ import net.sargue.mailgun.Response;
 @ConditionalOnProperty(name = "spring.email.provider", havingValue = "mailgun")
 public class MailgunEmailSender extends EmailSender {
 	 
-	//private static final String EU_BASE_URL = "https://api.eu.mailgun.net/v3";
-
 	@Override
 	public Response send(EmailMessage messageDetails) throws Exception {
 		Configuration configuration = new Configuration()
@@ -25,7 +23,7 @@ public class MailgunEmailSender extends EmailSender {
 		return Mail.using(configuration)
 		    .to(messageDetails.getReceiver())
 		    .subject(messageDetails.getSubject())
-		    .text(messageDetails.getBody())
+		    .html(messageDetails.getBody())
 		    .build()
 		    .send();
 	}
