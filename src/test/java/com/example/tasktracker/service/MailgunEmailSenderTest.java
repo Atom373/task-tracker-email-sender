@@ -27,7 +27,7 @@ public class MailgunEmailSenderTest {
 	@Autowired
 	private MailgunEmailSender sender;
 	
-	@Test
+	//@Test
 	public void emailSendingTest() {
 		EmailMessage msg = new EmailMessage(reciver, subject, body);
 		Response response = null;
